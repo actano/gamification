@@ -19,5 +19,9 @@ slapp.route('handleHowAreYou', (msg) => {
   msg.say(['Me too', 'Noted', 'That is interesting'])
 })
 
+const helpActions = require('./lib/help-actions')
+
+slapp.command('/workstreams', helpActions)
+
 // attach handlers to an Express app
 slapp.attachToExpress(app).listen(process.env.PORT)
