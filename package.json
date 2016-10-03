@@ -1,0 +1,30 @@
+{
+  "name": "workstreams",
+  "version": "0.0.1",
+  "description": "A bot for task-management",
+  "main": "index.js",
+  "scripts": {
+    "ut": "mocha **/*.ut.js",
+    "ut:watch": "mocha **/*.ut.js --watch",
+    "it": "mocha **/*.it.js",
+    "test": "mocha **/*.ut.js && mocha **/*.it.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christian-bick/workstreams-v2.git"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.6.4",
+    "slapp": "^1.2.0",
+    "co": "^4.6.0",
+    "node-uuid": "^1.4.7",
+    "string-similarity": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "sinon": "^1.17.5",
+    "sinon-chai": "^2.8.0"
+  }
+}
