@@ -19,9 +19,23 @@ slapp.route('handleHowAreYou', (msg) => {
   msg.say(['Me too', 'Noted', 'That is interesting'])
 })
 
-const helpActions = require('./lib/help-actions')
+const HelpActions = require('./lib/help-actions')
+const helpActions = new HelpActions()
+
+slapp.use((message, next) => {
+  const event = message.body.event
+  if (event
+      && event.type == 'message'
+      && event.subtype == 'channel_join'
+      && event.text.indexOf(message.meta.bot_user_id) !== -1) {
+    helpActions.offerHelpWithIntro(message)
+  } else {
+    next()
+  }
+})
 
 slapp.command('/workstreams', helpActions.showHelp)
+slapp.action('help', 'show', helpActions.showHelp)
 
 // attach handlers to an Express app
 slapp.attachToExpress(app).listen(process.env.PORT)
