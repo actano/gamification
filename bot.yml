@@ -1,0 +1,20 @@
+name: Work Streams
+description: Project Management for your Slack
+avatar: resources/workstream.jpg
+config:
+- name: AWS_REGION
+  friendly_name: AWS Region
+  info: Region of deployment (e.g. us-eas-1)
+  default: us-east-1
+  type: text
+  global: true
+- name: AWS_ACCESS_KEY
+  friendly_name: AWS Access Key
+  info: Amazon Web Services access key
+  type: secret
+  global: true
+- name: AWS_SECRET_KEY
+  friendly_name: AWS Secret Key
+  info: Amazon Web Services secret key
+  type: secret
+  global: true
