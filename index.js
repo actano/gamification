@@ -11,11 +11,13 @@ const AwardActions = require('./lib/award-actions')
 const QuestActions = require('./lib/quest-actions')
 const HelpActions = require('./lib/help-actions')
 const TaskActions = require('./lib/task-actions')
+const GameStore = require('./lib/game-store')
 const TaskStore = require('./lib/task-store')
 const ConversationStore = require('./lib/conversation-store')
 
 store = {
   tasks: new TaskStore(),
+  game: new GameStore(),
   conversations: new ConversationStore()
 };
 
@@ -27,7 +29,9 @@ const helpActions = new HelpActions();
 /**
  * Award commands
  */
-slapp.command('/award', /.*(\d+).*(@\w+).*/, awardActions.checkAwardPoints);
+slapp.command('/award', 'ladder', awardActions.ladder);
+// slapp.command('/award', 'points', awardActions.ladder);
+slapp.command('/award', /.*?(\d+).*(@\w+).*/, awardActions.checkAwardPoints);
 slapp.command('/award', awardActions.showHelp);
 
 /**
@@ -40,14 +44,15 @@ slapp.action('award_action', 'award_no', awardActions.noPoints);
  * Quest commands
  */
 slapp.command('/quest', 'list', questActions.listQuests);
-slapp.command('/quest', /.*detail\s+(.*)/, questActions.questDetails);
-slapp.command('/quest', /.*achieve\s+(.*)\s+(@\w+).*/, questActions.achieveQuest);
+// slapp.command('/quest', /.*detail\s+(.*)/, questActions.questDetails);
+// slapp.command('/quest', /.*achieve\s+(.*)\s+(@\w+).*/, questActions.achieveQuest);
 slapp.command('/quest', questActions.showHelp);
 
 /**
  * Quest actions
  */
 slapp.action('quest_action', 'details', questActions.questDetails);
+slapp.action('quest_action', 'achieve', questActions.achieveQuest);
 
 /**
  * Task commands
