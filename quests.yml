@@ -12,3 +12,42 @@ quests:
     points: 10
     description: |
       Prepare and execute a talk about specific Clean Code Topics.
+      These may originate from The Book or something similar like 
+      "Growing Object-Oriented Software, Guided by Tests"
+    
+  kataCreator
+    title: Kata Creator
+    points: 10
+    description: |
+      You have learned something out of a good book? You joined a class? You worked out something 
+      interesting on your own? Prepare an exercise to be performed in a coding dojo to share your knowledge.
+      Invite your colleagues to join you in a dojo you will organize and moderate.
+  
+  dojoHoster
+    title: Dojo Hoster
+    points: 3
+    description: |
+      Elect a Kata from various catalogues in the web or by employing one of the previous organized, 
+      RPLAN next specific Katas. Fetch some colleagues of yours and perform a dojo.
+
+  dojoTourist
+    title: Dojo Tourist
+    points: 3
+    description: |
+      Announce your planned participation in a external dojo to all of your colleagues via Slack, so that your 
+      colleagues can join in. Visit and participate in this dojo. Give participation feedback to the gamemaster.
+      
+  joinDaDojo
+    title: Join da dojo
+    points: 2
+    description: |
+      One of your colleagues recklessly gained some points by facilitating a dojo? Keep with him and breath in his neck
+      by joining it, train your skills and gain some points also.
+      
+  tShirtQuest
+    title: tShirtQuest
+    points: 2
+    description: |
+      You and your team mates come to work wearing the same color of T-Shirts. Perform something funny and post a
+      picture of it in Slack.
+      
