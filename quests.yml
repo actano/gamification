@@ -1,0 +1,14 @@
+quests:
+  cleanBlogger:
+    title: Clean Blogger
+    points: 5
+    description: |
+      Write a blog post about a chapter from our Clean Code Books.
+      Adapt samples to our environment.
+      e.g. translate java to javascript
+
+  cleanTalk:
+    title: Clean Talk
+    points: 10
+    description: |
+      Prepare and execute a talk about specific Clean Code Topics.
