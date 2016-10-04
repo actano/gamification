@@ -7,6 +7,7 @@ if (!process.env.PORT) throw Error('PORT missing but required')
 var app = express();
 var slapp = Slapp({ context: BeepBoopContext() })
 
+const AwardActions = require('./lib/award-actions')
 const HelpActions = require('./lib/help-actions')
 const TaskActions = require('./lib/task-actions')
 const TaskStore = require('./lib/task-store')
@@ -17,8 +18,21 @@ store = {
   conversations: new ConversationStore()
 };
 
+const awardActions = new AwardActions(store);
 const taskActions = new TaskActions(store);
 const helpActions = new HelpActions();
+
+/**
+ * Award commands
+ */
+slapp.command('/award', /.*(\d+).*(@\w+).*/, awardActions.checkAwardPoints);
+slapp.command('/award', awardActions.showHelp);
+
+/**
+ * Award actions
+ */
+slapp.action('award_action', 'award_yes', awardActions.awardPoints);
+slapp.action('award_action', 'award_no', awardActions.noPoints);
 
 /**
  * Task commands
