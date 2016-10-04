@@ -15,7 +15,7 @@ quests:
       These may originate from The Book or something similar like 
       "Growing Object-Oriented Software, Guided by Tests"
     
-  kataCreator
+  kataCreator:
     title: Kata Creator
     points: 10
     description: |
@@ -23,28 +23,28 @@ quests:
       interesting on your own? Prepare an exercise to be performed in a coding dojo to share your knowledge.
       Invite your colleagues to join you in a dojo you will organize and moderate.
   
-  dojoHoster
+  dojoHoster:
     title: Dojo Hoster
     points: 3
     description: |
       Elect a Kata from various catalogues in the web or by employing one of the previous organized, 
       RPLAN next specific Katas. Fetch some colleagues of yours and perform a dojo.
 
-  dojoTourist
+  dojoTourist:
     title: Dojo Tourist
     points: 3
     description: |
       Announce your planned participation in a external dojo to all of your colleagues via Slack, so that your 
       colleagues can join in. Visit and participate in this dojo. Give participation feedback to the gamemaster.
       
-  joinDaDojo
+  joinDaDojo:
     title: Join da dojo
     points: 2
     description: |
       One of your colleagues recklessly gained some points by facilitating a dojo? Keep with him and breath in his neck
       by joining it, train your skills and gain some points also.
       
-  tShirtQuest
+  tShirtQuest:
     title: tShirtQuest
     points: 2
     description: |

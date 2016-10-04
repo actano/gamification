@@ -8,6 +8,7 @@ var app = express();
 var slapp = Slapp({ context: BeepBoopContext() })
 
 const AwardActions = require('./lib/award-actions')
+const QuestActions = require('./lib/quest-actions')
 const HelpActions = require('./lib/help-actions')
 const TaskActions = require('./lib/task-actions')
 const TaskStore = require('./lib/task-store')
@@ -19,6 +20,7 @@ store = {
 };
 
 const awardActions = new AwardActions(store);
+const questActions = new QuestActions(store);
 const taskActions = new TaskActions(store);
 const helpActions = new HelpActions();
 
@@ -33,6 +35,19 @@ slapp.command('/award', awardActions.showHelp);
  */
 slapp.action('award_action', 'award_yes', awardActions.awardPoints);
 slapp.action('award_action', 'award_no', awardActions.noPoints);
+
+/**
+ * Quest commands
+ */
+slapp.command('/quest', 'list', questActions.listQuests);
+slapp.command('/quest', /.*detail\s+(.*)/, questActions.questDetails);
+slapp.command('/quest', /.*achieve\s+(.*)\s+(@\w+).*/, questActions.achieveQuest);
+slapp.command('/quest', questActions.showHelp);
+
+/**
+ * Quest actions
+ */
+slapp.action('quest_action', 'details', questActions.questDetails);
 
 /**
  * Task commands
